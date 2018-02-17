@@ -7,10 +7,20 @@
 </head>
 
 <body>
-    <ul id="messages"></ul>
-    <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <ul class="pages">
+        <li class="chat page">
+            <div class="chatArea">
+                <ul class="messages"></ul>
+            </div>
+            <input class="inputMessage" placeholder="Type here..." />
+        </li>
+        <li class="login page">
+            <div class="form">
+                <h3 class="title">What's your nickname?</h3>
+                <input class="usernameInput" type="text" maxlength="14" />
+            </div>
+        </li>
+    </ul>
 
     <!-- Backend dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
