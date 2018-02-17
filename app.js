@@ -3,12 +3,16 @@
  * @Socket.io
  */
 
-const app = require('express')();
+const express = require('express');
+const app = express();
 const http = require('http').Server(app);
+const path = require('path');
 const io = require('socket.io')(http);
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/view/index.html');
+    res.sendFile(__dirname + '/public/view/index.html');
 })
 
 io.on('connection', function (socket) {
